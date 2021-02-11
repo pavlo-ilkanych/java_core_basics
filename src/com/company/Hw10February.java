@@ -27,8 +27,8 @@ public class Hw10February {
 }*/
 
 //Task 2
-public static class Arr10 {
-    public  void main(String[] args) {
+static class Arr10 {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] arr = new int[5];
 
