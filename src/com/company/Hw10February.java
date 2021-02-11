@@ -2,8 +2,9 @@ package com.company;
 
 import java.util.Scanner;
 
-class Hw10February {
-    public static void main(String[] args) {
+public class Hw10February {
+    // Task 1
+    /*public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int m;
@@ -23,4 +24,32 @@ class Hw10February {
         vklad = m * (k/n);
         System.out.println("Ваш вклад становитиме " + vklad + " гривень.");
     }
+}*/
+
+//Task 2
+public static class Arr10 {
+    public  void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[5];
+
+        System.out.println("Введыть елементи масиву: ");
+        for (int a = 0; a < arr.length; a++) {
+            arr[a] = sc.nextInt();
+        }
+
+        System.out.print("Ваш массив:");
+        for (int a = 0; a < arr.length; a++) {
+            System.out.print(" " + arr[a]);
+        }
+
+        System.out.println();
+
+        System.out.println("Елементи у зворотньому порядку: ");
+        for (int a = arr.length - 1; a >= 0; a--) {
+            System.out.print(" " + arr[a]);
+            }
+        }
+    }
 }
+
+
