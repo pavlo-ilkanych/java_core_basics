@@ -24,7 +24,7 @@ public class Hw10February {
         vklad = m * (k/n);
         System.out.println("Ваш вклад становитиме " + vklad + " гривень.");
     }
-}*/
+}
 
 //Task 2
 static class Arr10 {
@@ -49,7 +49,20 @@ static class Arr10 {
             System.out.print(" " + arr[a]);
             }
         }
+    }*/
+
+//Task 3
+//static class DeepArr1 {
+    public static void main(String[] args) {
+        int [][] deepArr = new int[5][7];
+        for (int a = 0; a < deepArr.length; a++) {
+            for (int b = 0; b < deepArr[a].length; b++){
+                deepArr [a][b] = ((int)(Math.random() * 78) - 2);
+                System.out.print(deepArr[a][b] + "\t");
+                }
+            System.out.println();
+            }
+        }
     }
-}
 
 
