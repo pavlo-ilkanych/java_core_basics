@@ -2,14 +2,14 @@ package com.company.Hw18February.Car;
 
 public class Car {
 
-    private int year;
+    private int manufactureYear;
     private String typeOfFuel;
     private SteeringWheel steeringWheel;
     private Wheel wheel;
     private CarBody carBody;
 
     public Car(String typeOfFuel, int year, Wheel wheel, SteeringWheel steeringWheel, CarBody carBody){
-        this.year = year;
+        this.manufactureYear = year;
         this.typeOfFuel = typeOfFuel;
         this.steeringWheel = steeringWheel;
         this.wheel = wheel;
@@ -17,11 +17,11 @@ public class Car {
     }
 
     public int getYear() {
-        return year;
+        return manufactureYear;
     }
 
     public void setYear(int year) {
-        this.year = year;
+        this.manufactureYear = year;
     }
 
     public String getTypeOfFuel() {
@@ -56,10 +56,15 @@ public class Car {
         this.carBody = carBody;
     }
 
-    public void changeCarBody(int year) {
-        if (year > 2015) {
-            carBody.getChangeColor("blue");
-        } else carBody.getChangeColor("black");
+    public void setWinterTires(){
+        this.wheel.setProtector("winter");
     }
 
+    public void setSummerTires(){
+        this.wheel.setProtector("summer");
+    }
+
+    public String getTires(){
+        return this.wheel.getProtector();
+    }
 }
