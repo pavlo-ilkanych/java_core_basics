@@ -37,4 +37,15 @@ public class Warrior {
         warrior.hp -= weapon.damage;
     }
 
+    public void getDeath(){
+        if (getHp() < 0){
+            System.out.println(getName() + " помер.");
+        }
     }
+    public void getWinner(){
+        if(getHp() > 0){
+            System.out.println(getName() + " виграв.");
+        }
+    }
+
+}

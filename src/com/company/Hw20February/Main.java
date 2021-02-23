@@ -25,7 +25,8 @@ public class Main {
         System.out.println("Fight !!!");
         System.out.println();
 
-        while (warrior.getHp() >= 0 ) {
+
+        while (warrior.getHp() >= 0 || archer.getHp() >= 0 || rogue.getHp() >= 0) {
 
             int attacking = (int)Math.floor(Math.random() * warriorArr.length);
             int defending = (int)Math.floor(Math.random() * warriorArr.length);
@@ -34,10 +35,13 @@ public class Main {
                 warriorArr[attacking].attack(warriorArr[defending]);
                 System.out.println(warriorArr[attacking].getName() + " hit " + warriorArr[defending].getName());
                 System.out.println(warriorArr[defending].getName() + " hp: " + warriorArr[defending].getHp());
+                warriorArr[defending].getDeath();
                 System.out.println();
+                System.out.println("Битва закінчилась! Виграв воїн " + warriorArr[attacking].getName());
             }
             else
                 continue;
+
         }
     }
 }
