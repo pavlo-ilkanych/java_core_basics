@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Fight !!!");
         System.out.println();
 
-        while (warrior.getHp() >= 0 ) {
+        while (warrior.getHp() >= 0) {
 
             int attacking = (int)Math.floor(Math.random() * warriorArr.length);
             int defending = (int)Math.floor(Math.random() * warriorArr.length);
