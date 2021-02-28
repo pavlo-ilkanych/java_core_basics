@@ -10,7 +10,6 @@ public class Main {
         int num = 0;
         String word;
 
-
         do {
             System.out.println();
             System.out.println("Menu:");
@@ -29,9 +28,9 @@ public class Main {
             switch (num) {
                 case 1: {
                     for (Months month : Months.values()) {
-                        if (word.equals(month.name())) {
+                        if (word.equals(month.name()))
                             System.out.println(word + " it's a month.");
-                        }
+                        else return;
                     }
                     break;
                 }
