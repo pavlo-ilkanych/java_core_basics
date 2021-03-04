@@ -34,7 +34,7 @@ public class RegEx {
 
         System.out.println("Enter your email address: ");
         String stop = "q";
-        //
+        // To stop the loop enter q.
         while (true) {
             String email = scanner.next();
             Pattern pattern = Pattern.compile("@gmail.com$");
