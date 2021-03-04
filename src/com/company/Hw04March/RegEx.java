@@ -27,30 +27,31 @@ public class RegEx {
         }
     }
 
-    public void validationEmail(){
+    public void validationEmail() {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter your email address: ");
-        List<String> inputEmail = new ArrayList<>();
-        String email = scanner.next();
-        inputEmail.add(email);
 
         List<String> emails = new ArrayList<>();
 
-        Pattern pattern = Pattern.compile("@gmail.com$");
-        for (int i = 0; i < inputEmail.size(); i++) {
-            String email1 = email;
-            Matcher matcher = pattern.matcher(email1);
+        System.out.println("Enter your email address: ");
+        String stop = "q";
+        //
+        while (true) {
+            String email = scanner.next();
+            Pattern pattern = Pattern.compile("@gmail.com$");
+            Matcher matcher = pattern.matcher(email);
 
-            if(matcher.find()){
-                emails.add(email1);
+            if(email.equals(stop)) {
+                break;
+            } else if (matcher.find()) {
+                emails.add(email);
+            } else {
+                System.out.println("Incorrect email");
             }
         }
-        System.out.println();
-        for (String e : emails){
-            System.out.println(e);
+        System.out.println("In list");
+        for (String a : emails) {
+            System.out.println(a);
         }
     }
-
 
 }
