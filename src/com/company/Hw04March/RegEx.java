@@ -54,4 +54,16 @@ public class RegEx {
         }
     }
 
+    public void checkingString(){
+        String str = "I love Java more than my friend. Java is so beautiful.";
+
+        Pattern check = Pattern.compile("Java");
+        Matcher matcher = check.matcher(str);
+        if(matcher.find()) {
+            System.out.println("true");
+        }
+        System.out.println(matcher.replaceFirst("C#"));
+        System.out.println(matcher.replaceAll("C#"));
+    }
+
 }
