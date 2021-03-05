@@ -17,15 +17,13 @@ public class WordSize {
             if (a.length() > longestWord.length()) {
                 longestWord = a;
             }
+            if(a.length() < shortestWord.length()){
+                shortestWord = a;
+            }
         }
         System.out.println("Longest word is: " + longestWord);
         System.out.println("Index: " + Arrays.asList(word).indexOf(longestWord));
 
-        for(String b : word){
-            if(b.length() < shortestWord.length()){
-                shortestWord = b;
-            }
-        }
         System.out.println("Shortest word is: " + shortestWord);
         System.out.println("Index: " + Arrays.asList(word).indexOf(shortestWord));
     }
