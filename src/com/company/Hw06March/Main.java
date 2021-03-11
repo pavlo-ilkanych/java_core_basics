@@ -15,12 +15,11 @@ public class Main {
         }
 
 
-
 //        printAll(words);
 //        printAllStartWithS(words);
 //        printAllMoreThanFive(words);
         removeMoreThanFiveElement(words);
-//        checkList(words);
+        checkList(words);
     }
 
     private static void printAll(List<String> words) {
@@ -49,18 +48,18 @@ public class Main {
     }
 
     private static void removeMoreThanFiveElement(List<String> words){
-        for (String str : words){
             if(words.size() > 5){
-                words.subList(5, words.size()).clear();
+                for (String str : words){
+                    words.subList(5, words.size()).clear();
                 System.out.println(words.toString());
             }
         }
     }
 
     public static void checkList(List<String> words){
-        for (String str : words){
             if(!words.isEmpty()){
-                throw new NullPointerException("List is empty!");
+                for (String str : words){
+                    throw new NullPointerException("List is empty!");
             }
         }
     }
