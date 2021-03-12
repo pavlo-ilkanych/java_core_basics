@@ -1,17 +1,13 @@
 package com.company.Hw11March;
 
-import java.util.List;
 import java.util.Scanner;
 
-public class Commodity {
+public class Commodity implements Comparable<Commodity>{
 
     private String productName;
     private int productLength;
     private int productWidth;
     private int productWeight;
-
-    public Commodity() {
-    }
 
     public Commodity(String productName, int productLength, int productWidth, int productWeight) {
         this.productName = productName;
@@ -52,6 +48,7 @@ public class Commodity {
         this.productWeight = productWeight;
     }
 
+    //Для тесту.
     @Override
     public String toString() {
         return "Commodity{" +
@@ -62,27 +59,26 @@ public class Commodity {
                 '}';
     }
 
-    public void addProduct(){
+    public static Commodity createNewProduct(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter product name:");
-        setProductName(scanner.next());
+        String name = scanner.next();
 
         System.out.println("Enter product length:");
-        setProductLength(scanner.nextInt());
+        int length = scanner.nextInt();
 
         System.out.println("Enter product width:");
-        setProductWidth(scanner.nextInt());
+        int width = scanner.nextInt();
 
         System.out.println("Enter product weight:");
-        setProductWeight(scanner.nextInt());
+        int weight = scanner.nextInt();
+        return new Commodity(name, length, width, weight);
     }
 
-    public void removeProduct(List<Object> list, String name){
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter product name:");
-        getProductName();
+    @Override
+    public int compareTo(Commodity o) {
+        int result = productName.compareTo(o.getProductName());
+        return result;
     }
-
 }

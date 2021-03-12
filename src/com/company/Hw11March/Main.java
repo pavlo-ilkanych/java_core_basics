@@ -6,14 +6,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Commodity commodity = new Commodity();
         //Ці об"єкти створені для тесту.
         Commodity tomato = new Commodity("Tomato", 10, 8, 120);
         Commodity potato = new Commodity("Potato", 9, 5, 70);
         Commodity milk = new Commodity("Milk", 11, 30, 1000);
         Commodity oats = new Commodity("Oats", 15, 20, 500);
 
-        List<Commodity> commodityList = new ArrayList<>();
+        List<Commodity> commodityList = new ArrayList<Commodity>();
         commodityList.add(tomato);
         commodityList.add(potato);
         commodityList.add(milk);
@@ -36,11 +35,11 @@ public class Main {
 
             switch (num){
                 case 1: {
-                    commodity.addProduct();
-                    if(commodity.getProductName() != null){
-                        commodityList.add(commodity);
+                    Commodity newCommodity = Commodity.createNewProduct();
+                    if(newCommodity.getProductName() != null){
+                        commodityList.add(newCommodity);
                     }
-                    System.out.println(commodityList);
+                    System.out.println(commodityList); //Для тесту.
                     break;
                 } case 2: {
                     Iterator<Commodity> iterator = commodityList.iterator();
@@ -54,10 +53,56 @@ public class Main {
                     }
                     System.out.println(commodityList);
                     break;
+                } case 3: {
+                    System.out.println("Enter product name");
+                    String productName = scanner.next();
+                    for (Commodity commodity : commodityList)
+                        if(commodity.getProductName().equalsIgnoreCase(productName)){
+                            commodity.setProductName(scanner.next());
+                            commodity.setProductLength(scanner.nextInt());
+                            commodity.setProductWidth(scanner.nextInt());
+                            commodity.setProductWeight(scanner.nextInt());
+                        }
+                    System.out.println(commodityList);
+                    break;
+                } case 4: {
+                    Collections.sort(commodityList);
+                    for (Commodity a : commodityList){
+                        System.out.println(a);
+                    }
+                    break;
+                } case 5: {
+                    Collections.sort(commodityList, new CommodityLengthComparator());
+                    for (Commodity a : commodityList){
+                        System.out.println(a);
+                    }
+                    break;
+                } case 6: {
+                    Collections.sort(commodityList, new CommodityWidthComparator());
+                    for (Commodity a : commodityList){
+                        System.out.println(a);
+                    }
+                    break;
+                } case 7: {
+                    Collections.sort(commodityList, new CommodityWeightComparator());
+                    for (Commodity a : commodityList){
+                        System.out.println(a);
+                    }
+                    break;
+                } case 8: {
+                    System.out.println("Enter product name");
+                    for(Commodity a : commodityList){
+                        if(a.getProductName().equalsIgnoreCase(scanner.next())){
+                            System.out.println(a);
+                        }
+                    }
+                } case 9: {
+                    System.exit(0);
                 }
                 default:
                     System.err.println("Incorrect number, please enter from 1 to 9.");
             }
         }while (num != 0);
     }
+
 }
