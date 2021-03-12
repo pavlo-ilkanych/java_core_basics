@@ -1,6 +1,7 @@
 package com.company.Hw06March;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,9 +16,9 @@ public class Main {
         }
 
 
-//        printAll(words);
-//        printAllStartWithS(words);
-//        printAllMoreThanFive(words);
+        printAll(words);
+        printAllStartWithS(words);
+        printAllMoreThanFive(words);
         removeMoreThanFiveElement(words);
         checkList(words);
     }
@@ -48,9 +49,10 @@ public class Main {
     }
 
     private static void removeMoreThanFiveElement(List<String> words){
+        Iterator iterator = words.iterator();
+        while (iterator.hasNext()){
             if(words.size() > 5){
-                for (String str : words){
-                    words.subList(5, words.size()).clear();
+                words.subList(5, words.size()).clear();
                 System.out.println(words.toString());
             }
         }
