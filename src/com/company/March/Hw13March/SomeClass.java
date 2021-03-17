@@ -1,4 +1,4 @@
-package com.company.Hw13March;
+package com.company.March.Hw13March;
 
 public class SomeClass implements Comparable<SomeClass>{
 
