@@ -1,5 +1,6 @@
 package com.company.March.Hw11March;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Commodity implements Comparable<Commodity>{
@@ -80,5 +81,44 @@ public class Commodity implements Comparable<Commodity>{
     public int compareTo(Commodity o) {
         int result = productName.compareTo(o.getProductName());
         return result;
+    }
+
+    static class CommodityLengthComparator implements Comparator<Commodity> {
+        @Override
+        public int compare(Commodity o1, Commodity o2) {
+            if(o1.getProductLength() > o2.getProductLength()){
+                return 1;
+            }else if(o1.getProductLength() < o2.getProductLength()){
+                return -1;
+            }else {
+                return 0;
+            }
+        }
+    }
+
+    static class CommodityWeightComparator implements Comparator<Commodity> {
+        @Override
+        public int compare(Commodity o1, Commodity o2) {
+            if(o1.getProductWeight() > o2.getProductWeight()){
+                return 1;
+            }else if(o1.getProductWeight() < o2.getProductWeight()){
+                return -1;
+            }else {
+                return 0;
+            }
+        }
+    }
+
+    static class CommodityWidthComparator implements Comparator<Commodity> {
+        @Override
+        public int compare(Commodity o1, Commodity o2) {
+            if(o1.getProductWidth() > o2.getProductWidth()){
+                return 1;
+            }else if(o1.getProductWidth() < o2.getProductWidth()){
+                return -1;
+            }else {
+                return 0;
+            }
+        }
     }
 }

@@ -12,13 +12,13 @@ public class Main {
         Commodity milk = new Commodity("Milk", 11, 30, 1000);
         Commodity oats = new Commodity("Oats", 15, 20, 500);
 
-        List<Commodity> commodityList = new ArrayList<Commodity>();
+        List<Commodity> commodityList = new ArrayList<>();
         commodityList.add(tomato);
         commodityList.add(potato);
         commodityList.add(milk);
         commodityList.add(oats);
 
-        int num = 0;
+        int num;
         do{
             System.out.println();
             System.out.println("Menu: ");
@@ -72,19 +72,19 @@ public class Main {
                     }
                     break;
                 } case 5: {
-                    Collections.sort(commodityList, new CommodityLengthComparator());
+                    Collections.sort(commodityList, new Commodity.CommodityLengthComparator());
                     for (Commodity a : commodityList){
                         System.out.println(a);
                     }
                     break;
                 } case 6: {
-                    Collections.sort(commodityList, new CommodityWidthComparator());
+                    Collections.sort(commodityList, new Commodity.CommodityWidthComparator());
                     for (Commodity a : commodityList){
                         System.out.println(a);
                     }
                     break;
                 } case 7: {
-                    Collections.sort(commodityList, new CommodityWeightComparator());
+                    Collections.sort(commodityList, new Commodity.CommodityWeightComparator());
                     for (Commodity a : commodityList){
                         System.out.println(a);
                     }
