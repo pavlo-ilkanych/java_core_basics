@@ -6,7 +6,7 @@ public class Employee implements Serializable {
 
     private String name;
     private int id;
-    private int salary;
+    private transient int salary;
 
     public Employee(String name, int id, int salary) {
         this.name = name;
