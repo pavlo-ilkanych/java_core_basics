@@ -8,15 +8,15 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         Methods methods = new Methods();
-        Employee employee = new Employee("Jack", 123456, 1000);
+        Employee employee = new Employee("Jack", 123456, new Salary(1000));
 
-//        methods.serialize(employee);
-//        methods.deserialize(employee);
+        methods.serialize(employee);
+        methods.deserialize(employee);
 
-        Collection<Employee> collection = new ArrayList<>(); //Task 3
+        Collection<Employee> collection = new ArrayList<>();
 
         collection.add(employee);
-        collection.add(new Employee("John", 147258, 1500));
+        collection.add(new Employee("John", 147258, new Salary(1500)));
 
         methods.serialize(collection);
         methods.deserialize(collection);
