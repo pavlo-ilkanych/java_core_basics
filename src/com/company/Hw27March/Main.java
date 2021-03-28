@@ -1,11 +1,10 @@
 package com.company.Hw27March;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class Main {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args){
 
         String path = "C:\\Users\\Twist3r\\IdeaProjects\\Homeworks\\src\\com\\company\\Hw27March\\serialize.txt";
         Employee employee = new Employee("Jack", 123456, new Salary(1000));

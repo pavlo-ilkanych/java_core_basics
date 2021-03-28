@@ -2,7 +2,7 @@ package com.company.Hw27March;
 
 import java.io.*;
 
-public class Methods implements Serializable {
+public class Methods {
 
     public static void serialize(Object obj, String path)
     {
