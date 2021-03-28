@@ -1,6 +1,4 @@
-package com.company.Hw18March;
-
-import java.util.Objects;
+package com.company.March.Hw18March;
 
 public class Person {
 
