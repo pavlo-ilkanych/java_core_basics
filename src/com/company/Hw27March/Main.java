@@ -10,15 +10,15 @@ public class Main {
         Methods methods = new Methods();
         Employee employee = new Employee("Jack", 123456, new Salary(1000));
 
-        methods.serialize(employee);
-        methods.deserialize(employee);
+        methods.serialize(employee, "C:\\Users\\Twist3r\\IdeaProjects\\Homeworks\\src\\com\\company\\Hw27March\\serialize.txt");
+        methods.deserialize("C:\\Users\\Twist3r\\IdeaProjects\\Homeworks\\src\\com\\company\\Hw27March\\serialize.txt");
 
         Collection<Employee> collection = new ArrayList<>();
 
         collection.add(employee);
         collection.add(new Employee("John", 147258, new Salary(1500)));
 
-        methods.serialize(collection);
-        methods.deserialize(collection);
+        methods.serialize(collection, "C:\\Users\\Twist3r\\IdeaProjects\\Homeworks\\src\\com\\company\\Hw27March\\serialize.txt");
+        methods.deserialize("C:\\Users\\Twist3r\\IdeaProjects\\Homeworks\\src\\com\\company\\Hw27March\\serialize.txt");
     }
 }

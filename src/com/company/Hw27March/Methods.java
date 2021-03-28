@@ -4,20 +4,28 @@ import java.io.*;
 
 public class Methods implements Serializable {
 
-    public void serialize(Object obj) throws IOException
+    public void serialize(Object obj, String path)
     {
-        FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Twist3r\\IdeaProjects\\Homeworks\\src\\com\\company\\Hw27March\\serialize.txt");
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-
-        objectOutputStream.writeObject(obj);
-        objectOutputStream.close();
+        try (FileOutputStream outputStream = new FileOutputStream(path);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream))
+        {
+            objectOutputStream.writeObject(obj);
+        }catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
-    public void deserialize(Object obj) throws IOException, ClassNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream("C:\\Users\\Twist3r\\IdeaProjects\\Homeworks\\src\\com\\company\\Hw27March\\serialize.txt");
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+    public  <K> K deserialize(String path){
 
-        obj = (Object) objectInputStream.readObject();
-        System.out.println(obj);
+        K obj = null;
+        try (FileInputStream fileInputStream = new FileInputStream(path);
+        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream))
+        {
+            obj = (K) objectInputStream.readObject();
+            System.out.println(obj);
+        }catch (IOException | ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+        return obj;
     }
 }
