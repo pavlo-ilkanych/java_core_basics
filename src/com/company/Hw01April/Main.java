@@ -23,7 +23,7 @@ public class Main {
                 System.out.println("Field name: " + field.getName());
                 try(Writer writer = new FileWriter(path))
                 {
-                    writer.write( field.getName());
+                    writer.write(field.getName());
                     writer.flush();
                 }catch (IOException e) {
                     System.err.println(e.getMessage());
