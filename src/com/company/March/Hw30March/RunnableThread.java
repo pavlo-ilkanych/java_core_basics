@@ -1,4 +1,4 @@
-package com.company.Hw30March;
+package com.company.March.Hw30March;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
