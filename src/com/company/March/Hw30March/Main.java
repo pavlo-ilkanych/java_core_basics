@@ -1,6 +1,4 @@
-package com.company.Hw30March;
-
-import java.util.Scanner;
+package com.company.March.Hw30March;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
