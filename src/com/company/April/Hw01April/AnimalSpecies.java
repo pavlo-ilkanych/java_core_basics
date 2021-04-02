@@ -1,4 +1,4 @@
-package com.company.Hw01April;
+package com.company.April.Hw01April;
 
 public class AnimalSpecies {
 
