@@ -1,9 +1,12 @@
 package com.company.Hw06April;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static java.util.Collections.reverseOrder;
+import static java.util.Comparator.comparing;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,10 +41,16 @@ public class Main {
                 .sorted((o1, o2) -> o2.getName().compareTo(o1.getName()))
                 .collect(Collectors.toList());
 
+        //або так
+        peoples.stream().sorted(comparing(People::getName, reverseOrder())).collect(Collectors.toList());
+
         //Відсортувати колекцію людей спочатку за ім’ям, а потім за віком
         peoples.stream()
                 .sorted((o1, o2) -> o1.getName() != o2.getName() ? o1.getName().compareTo(o2.getName()): o1.getAge().compareTo(o2.getAge()))
                 .collect(Collectors.toList());
+
+        //або так
+        peoples.stream().sorted(comparing(People::getName).thenComparing(People::getAge)).collect(Collectors.toList());
 
         //Знайти найстаршу людину
         peoples.stream().max((o1, o2) -> o1.getAge().compareTo(o2.getAge())).get();
