@@ -19,7 +19,7 @@ public class Main  {
             try {
                 num = new Scanner(System.in).nextInt();
             }catch (InputMismatchException e){
-                System.err.println("qwrqw");
+                System.err.println("Wrong symbol");
             }
             switch (num){
                 case 1: {
